@@ -1,0 +1,32 @@
+---
+import { profile } from '../data/content';
+
+const focusAreas = [
+  'Applying ML/AI to early diagnosis of Non-Communicable Diseases (NCDs) in Low- and Middle-Income Countries',
+  'Biomedical signal processing — ECG analysis and wearable cardiac monitoring',
+  'Epidemiology and data analysis for primordial prevention',
+];
+---
+
+<section id="about" class="border-t border-white/5 px-6 py-20">
+  <div class="mx-auto grid max-w-5xl gap-12 md:grid-cols-5">
+    <div class="md:col-span-3">
+      <h2 class="text-sm font-semibold uppercase tracking-widest text-teal-400">About</h2>
+      <div class="mt-4 space-y-4 text-slate-300">
+        {profile.bio.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+
+    <div class="md:col-span-2">
+      <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500">Focus areas</h3>
+      <ul class="mt-4 space-y-3">
+        {focusAreas.map((area) => (
+          <li class="flex gap-3 text-sm text-slate-300">
+            <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400"></span>
+            <span>{area}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

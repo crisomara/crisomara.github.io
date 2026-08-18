@@ -1,0 +1,17 @@
+---
+import { projects } from '../data/content';
+import ProjectCard from './ProjectCard.astro';
+---
+
+<section id="projects" class="border-t border-white/5 px-6 py-20">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-teal-400">Featured Work</h2>
+    <p class="mt-2 max-w-2xl text-slate-400">
+      A selection of projects spanning wearable hardware, signal processing, and applied ML.
+    </p>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</section>

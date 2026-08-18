@@ -1,0 +1,58 @@
+---
+import type { Project } from '../data/content';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+
+const icons: Record<Project['icon'], string> = {
+  heart: 'M12 21s-7.5-4.8-10-9.3C.3 8 2 4.5 5.5 4.5c2 0 3.5 1.2 4.5 2.7 1-1.5 2.5-2.7 4.5-2.7C18 4.5 19.7 8 22 11.7 19.5 16.2 12 21 12 21z',
+  waveform: 'M2 12h3l2-7 3 14 3-10 2 6h3l2-3h3',
+  scale: 'M12 3v18M6 6l-3.5 8a3.5 3.5 0 0 0 7 0L6 6zm12 0l-3.5 8a3.5 3.5 0 0 0 7 0L18 6zM4 6h16M8 21h8',
+};
+---
+
+<article
+  class="group flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-colors hover:border-teal-400/30"
+>
+  <div>
+    <div class="flex items-start justify-between gap-3">
+      <div
+        class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-400/10 text-teal-300"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+          <path d={icons[project.icon]} />
+        </svg>
+      </div>
+      {project.highlight && (
+        <span class="rounded-full bg-amber-400/10 px-2.5 py-1 text-xs font-medium text-amber-300">
+          {project.highlight}
+        </span>
+      )}
+    </div>
+
+    <h3 class="mt-4 font-semibold text-white">{project.title}</h3>
+    <p class="mt-2 text-sm leading-relaxed text-slate-400">{project.description}</p>
+
+    <div class="mt-4 flex flex-wrap gap-2">
+      {project.tags.map((tag) => (
+        <span class="rounded-md bg-white/5 px-2 py-1 text-xs text-slate-400">{tag}</span>
+      ))}
+    </div>
+  </div>
+
+  <a
+    href={project.href}
+    target="_blank"
+    rel="noreferrer"
+    class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-teal-300 transition-colors group-hover:text-teal-200"
+  >
+    View on GitHub
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5">
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  </a>
+</article>

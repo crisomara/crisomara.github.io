@@ -1,0 +1,24 @@
+---
+import { nav, profile } from '../data/content';
+---
+
+<header class="sticky top-0 z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <a href="#top" class="font-semibold tracking-tight text-white">
+      {profile.name.split(' ')[0]}<span class="text-teal-400">.</span>
+    </a>
+    <nav class="hidden gap-8 text-sm text-slate-300 sm:flex">
+      {nav.map((item) => (
+        <a href={item.href} class="transition-colors hover:text-teal-400">
+          {item.label}
+        </a>
+      ))}
+    </nav>
+    <a
+      href="#contact"
+      class="rounded-full border border-teal-400/40 px-4 py-1.5 text-sm text-teal-300 transition-colors hover:bg-teal-400/10"
+    >
+      Get in touch
+    </a>
+  </div>
+</header>

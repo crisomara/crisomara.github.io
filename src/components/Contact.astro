@@ -1,0 +1,43 @@
+---
+import { profile } from '../data/content';
+
+// TODO: swap the mailto: link below for a Formspree action once you have an
+// endpoint (https://formspree.io) if you want a proper in-page contact form.
+---
+
+<section id="contact" class="border-t border-white/5 px-6 py-20">
+  <div class="mx-auto max-w-3xl text-center">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-teal-400">Get In Touch</h2>
+    <p class="mt-4 text-lg text-slate-300">
+      Open to collaborations in HealthTech and Machine Learning, and to opportunities as a
+      Junior Data Scientist. Reach out — I'd like to hear from you.
+    </p>
+
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href={`mailto:${profile.email}`}
+        class="rounded-full bg-teal-400 px-6 py-2.5 text-sm font-medium text-slate-950 transition-transform hover:scale-105"
+      >
+        {profile.email}
+      </a>
+      <a
+        href={profile.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        class="rounded-full border border-white/15 px-6 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:border-teal-400/50 hover:text-teal-300"
+      >
+        LinkedIn
+      </a>
+      <a
+        href={profile.github}
+        target="_blank"
+        rel="noreferrer"
+        class="rounded-full border border-white/15 px-6 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:border-teal-400/50 hover:text-teal-300"
+      >
+        GitHub
+      </a>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">{profile.location}</p>
+  </div>
+</section>

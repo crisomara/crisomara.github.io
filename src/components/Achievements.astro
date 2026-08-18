@@ -1,0 +1,35 @@
+---
+import { achievements } from '../data/content';
+---
+
+<section id="achievements" class="border-t border-white/5 px-6 py-20">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-teal-400">
+      News &amp; Achievements
+    </h2>
+    <p class="mt-2 max-w-2xl text-slate-400">
+      Recent activity, recognition, and milestones in HealthTech and applied ML.
+    </p>
+
+    <ol class="mt-10 space-y-8 border-l border-white/10 pl-8">
+      {achievements.map((item) => (
+        <li class="relative">
+          <span class="absolute -left-[calc(2rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full bg-teal-400"></span>
+          <p class="text-xs font-medium uppercase tracking-wide text-slate-500">{item.date}</p>
+          <h3 class="mt-1 font-semibold text-white">{item.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-400">{item.description}</p>
+          {item.href && (
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              class="mt-3 inline-block text-sm font-medium text-teal-300 hover:text-teal-200"
+            >
+              {item.linkLabel ?? 'Read more'} &rarr;
+            </a>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

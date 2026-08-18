@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import { profile } from '../data/content';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${profile.name} — ${profile.title}`,
+  description = 'Portfolio of Christian Omara: machine learning for healthcare, biomedical signal processing, and cardiac care in low-resource settings.',
+} = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<title>{title}</title>
+	</head>
+	<body class="bg-slate-950 text-slate-200 antialiased selection:bg-teal-500/30 selection:text-white">
+		<slot />
+	</body>
+</html>
