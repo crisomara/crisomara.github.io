@@ -7,13 +7,14 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/omara-christian-kenneth',
   bio: [
     'I was born in Gulu, in Northern Uganda, and earned a Bachelor of Engineering in Biomedical and Mechatronics Engineering from Kyambogo University.',
-    "My work sits at the intersection of machine learning and cardiac care — I'm especially interested in biomedical signal processing, model-based ML for diagnosis, and building tools that hold up in low-infrastructure settings.",
-    "I'm currently focused on closing the diagnosis gap for Non-Communicable Diseases (NCDs) across Sub-Saharan Africa, and on epidemiology work around primordial prevention.",
+    "I work as an applied ML and data scientist first — the modeling, signal-processing, and systems toolkit I use goes wherever a hard problem needs it. Cardiac care is where I go deepest, but the same approach carries into other domains, like legal-document analysis.",
+    "My focus in healthcare is closing the diagnosis gap for Non-Communicable Diseases (NCDs) across Sub-Saharan Africa — through biomedical signal processing, model-based ML for diagnosis, and tools built to hold up in low-infrastructure settings — alongside epidemiology work on primordial prevention.",
   ],
 };
 
 export type Project = {
   title: string;
+  domain: string;
   description: string;
   tags: string[];
   href: string;
@@ -24,6 +25,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'Wearable MI Detection System',
+    domain: 'Healthcare',
     description:
       'A low-cost, ML-powered wearable that detects and monitors early signs of myocardial infarction in real time — built to bridge the gap left by limited infrastructure and clinical specialists in Sub-Saharan Africa.',
     tags: ['Machine Learning', 'ECG', 'Wearables', 'FastAPI'],
@@ -33,6 +35,7 @@ export const projects: Project[] = [
   },
   {
     title: 'ecg-prototype-mvp',
+    domain: 'Healthcare · Hardware',
     description:
       'ECG signal capture prototype built on an Arduino UNO R4 with an AD8232 sensor — the hardware groundwork for real-time cardiac monitoring.',
     tags: ['Arduino', 'AD8232', 'Signal Processing'],
@@ -41,8 +44,9 @@ export const projects: Project[] = [
   },
   {
     title: 'sheria_yangu',
+    domain: 'Legal Tech',
     description:
-      'A multi-agent system for legal document analysis, applying agentic ML workflows outside the healthcare domain.',
+      'A multi-agent system for legal document analysis — the same applied-ML approach behind the cardiac work, aimed at a completely different domain: making legal documents easier to navigate and reason about.',
     tags: ['Multi-Agent Systems', 'Python', 'NLP'],
     href: 'https://github.com/crisomara/sheria_yangu',
     icon: 'scale',
