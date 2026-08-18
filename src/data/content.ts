@@ -27,9 +27,9 @@ export const projects: Project[] = [
     title: 'Wearable MI Detection System',
     domain: 'Healthcare',
     description:
-      'A low-cost, ML-powered wearable that detects and monitors early signs of myocardial infarction in real time — built to bridge the gap left by limited infrastructure and clinical specialists in Sub-Saharan Africa.',
-    tags: ['Machine Learning', 'ECG', 'Wearables', 'FastAPI'],
-    href: 'https://github.com/crisomara/kardiosense_website',
+      'Lead-agnostic ECG + clinical-risk-factor fusion for myocardial infarction screening in low-resource settings — reduced-lead input, degrading gracefully from 12 leads down to 1. Open research code with a full model card, an ISIBrno-AIMT benchmark comparison, and reporting aligned to TRIPOD+AI / PROBAST+AI. Trained weights are withheld under a research-use license; the architecture, training harness, and evaluation are public.',
+    tags: ['PyTorch', 'ECG', 'Model Fusion', 'PTB-XL'],
+    href: 'https://github.com/crisomara/kardiosense-research',
     icon: 'heart',
     highlight: 'HSB Grant · Innovate Africa',
   },
